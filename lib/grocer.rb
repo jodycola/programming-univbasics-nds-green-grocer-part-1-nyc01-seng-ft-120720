@@ -20,6 +20,7 @@ def consolidate_cart(cart)
      collapse[item][:count] += 1
     else
       [:count] => 1
+    end
   end
 end
 collapse
