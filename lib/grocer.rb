@@ -11,17 +11,18 @@ def find_item_by_name_in_collection(name, collection)
 end
 
 def consolidate_cart(cart)
-  collapse = {}
-  
+  output = {}
   cart.each do |item|
-   if collapse[item]
-     collapse[item][:count] += 1
+    item_name = item.keys[0]
+    binding.pry
+    if output[item_name]
+      output[item_name][:count] += 1 
     else
-      [:count] => 1
+      output[item_name] = item[item_name]
+      output[item_name][:count] = 1 
+    end
   end
+  output
 end
-collapse
-end
-
 
   
