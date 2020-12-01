@@ -18,8 +18,6 @@ def consolidate_cart(cart)
       binding.pry
    if collapse[item]
      collapse[item][:count] += 1
-    else
-      [:count] = 1
     end
   end
 end
