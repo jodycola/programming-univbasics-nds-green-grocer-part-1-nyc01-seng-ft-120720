@@ -15,6 +15,7 @@ def consolidate_cart(cart)
   
   cart.each do |item|
     item.each do |key, value|
+      collapse
       binding.pry
    if collapse[item]
      collapse[item][:count] += 1
