@@ -10,19 +10,16 @@ def find_item_by_name_in_collection(name, collection)
   return NIL
 end
 
-def consolidate_cart(cart)
-  collapse = {}
-  
-  cart.each do |item|
-    item.each do |key, value|
-      collapse
-      binding.pry
-   if collapse[item]
-     collapse[item][:count] += 1
-    end
-  end
-end
-collapse
+def consolidate_cart(cart) 
+  new_cart = {} 
+  cart.each do |items_array| 
+    items_array.each do |item, attribute_hash| 
+      new_cart[item] ||= attribute_hash 
+      new_cart[item][:count] ? new_cart[item][:count] += 1 :   
+      new_cart[item][:count] = 1 
+  end 
+end 
+new_cart 
 end
 
 
